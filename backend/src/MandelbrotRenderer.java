@@ -41,7 +41,7 @@ public class MandelbrotRenderer implements Runnable {
         for (MbrotParameter currMbrot : mbrots){
             BufferedImage img = new BufferedImage(width, height,
                     BufferedImage.TYPE_INT_RGB);
-            File out = new File("images/"+currMbrot.fName + ".png");
+            File out = new File("backend/images/"+currMbrot.fName + ".png");
             for (int r = 0; r < height; r++)
             {
                 for (int c = 0; c < width; c++)

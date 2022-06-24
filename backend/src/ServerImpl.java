@@ -56,7 +56,7 @@ public class ServerImpl  extends UnicastRemoteObject implements Server {
 
     @Override
     public ImageIcon getWallpaper() throws IOException{
-        return new ImageIcon("Wallpaper/Wallpaper.png");
+        return new ImageIcon("backend/Wallpaper/Wallpaper.png");
     }
 
     @Override
@@ -130,12 +130,12 @@ public class ServerImpl  extends UnicastRemoteObject implements Server {
                 continue;
             }
         }
-        img = new ImageIcon("images/mbrot" + i + ".png");
+        img = new ImageIcon("backend/images/mbrot" + i + ".png");
         if(i % 12==0){
             Steps.setSteps_displayed(Steps.getSteps_displayed()+1);
         }
         if(i>=4) {
-            Path path = Paths.get("images/mbrot" + (i - 3) + ".png");
+            Path path = Paths.get("backend/images/mbrot" + (i - 3) + ".png");
             Files.deleteIfExists(path);
         }
         i++;

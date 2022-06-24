@@ -1,0 +1,15 @@
+@startuml
+autonumber
+actor Person
+
+Client -> Server : Registriert sich beim Server
+Client -> Server : Fragt nach dem Startbild
+Client <- Server : Sendet Startbild
+Person -> Client : Setzt StartKoordinaten per Mausklick
+Client -> Server : Sendet StartKoordinaten
+Client -> Server : Holt Bild vom Server
+
+... Beliebig oft ...
+
+
+@enduml

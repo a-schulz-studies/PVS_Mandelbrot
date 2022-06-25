@@ -92,6 +92,7 @@ public class ServerImpl  extends UnicastRemoteObject implements Server {
 
     @Override
     public void allertClose() throws IOException, InterruptedException {
+        sleep(100);
         System.out.println("close");
         Steps.setxCenter(-10);
         Steps.setyCenter(-10);
@@ -102,10 +103,10 @@ public class ServerImpl  extends UnicastRemoteObject implements Server {
         startRendering.join();
         startRendering = null;
         File file = new File( "backend/images");
-        sleep(1000);
         if ( file.isDirectory() )
         {
             File[] listFiles = file.listFiles();
+
             for ( int i = 0; i < listFiles.length; i++ )
             {
                 file=( listFiles[ i ] );

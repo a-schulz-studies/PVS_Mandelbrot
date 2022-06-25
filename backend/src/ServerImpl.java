@@ -28,7 +28,7 @@ public class ServerImpl  extends UnicastRemoteObject implements Server {
 
     protected ServerImpl() throws RemoteException{
         super();
-        File file = new File( "images");
+        File file = new File( "backend/images");
         if ( file.isDirectory() )
         {
             File[] listFiles = file.listFiles();
@@ -101,12 +101,11 @@ public class ServerImpl  extends UnicastRemoteObject implements Server {
         startRendering.stopThread();
         startRendering.join();
         startRendering = null;
-        File file = new File( "images");
+        File file = new File( "backend/images");
         sleep(1000);
         if ( file.isDirectory() )
         {
             File[] listFiles = file.listFiles();
-
             for ( int i = 0; i < listFiles.length; i++ )
             {
                 file=( listFiles[ i ] );
@@ -121,7 +120,6 @@ public class ServerImpl  extends UnicastRemoteObject implements Server {
 
     @Override
     public ImageIcon getMbrotIMG() throws IOException {
-        ImageIcon img = new ImageIcon();
         while(true) {
             if (Steps.getSteps_displayed()<=Steps.getSteps_rendered()-1) {
                 break;
@@ -130,7 +128,7 @@ public class ServerImpl  extends UnicastRemoteObject implements Server {
                 continue;
             }
         }
-        img = new ImageIcon("backend/images/mbrot" + i + ".png");
+        ImageIcon img  = new ImageIcon("backend/images/mbrot" + i + ".png");
         if(i % 12==0){
             Steps.setSteps_displayed(Steps.getSteps_displayed()+1);
         }

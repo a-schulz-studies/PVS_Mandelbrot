@@ -8,15 +8,11 @@ public class interrupt implements Runnable{
         Server server = null;
         try {
             server = (Server) Naming.lookup("rmi://localhost:2005/mandelbrot");
+            server.allertClose();
         } catch (NotBoundException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-        try {
-            server.allertClose();
         } catch (RemoteException e) {
             e.printStackTrace();
         }

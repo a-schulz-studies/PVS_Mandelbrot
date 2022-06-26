@@ -6,13 +6,13 @@ Client -> Server : Registriert sich beim Server
 activate Client
 Client -> Server : Fragt nach dem Startbild
 Client <- Server : Sendet Startbild
-actor Persons
+actor Person
 Client <- Person : Setzt StartKoordinaten per Mausklick
 Client -> Server : Sendet StartKoordinaten
 Client -> Server : Holt Bild vom Server
 ... Beliebig oft ...
 Person -> Client : beendet das Program
-Client -> Server : Sende Cliente beendet
+Client -> Server : Sende Info: Client wird beendet
 deactivate Client
 note left: Server wird zurückgesetzt\n und wartet wieder auf Client
 

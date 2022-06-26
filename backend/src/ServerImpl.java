@@ -98,7 +98,7 @@ public class ServerImpl  extends UnicastRemoteObject implements Server {
         Steps.setyCenter(-10);
         Steps.setSteps_rendered(0);
         Steps.setSteps_displayed(0);
-        this.i = 0;
+        this.i = 1;
         startRendering.stopThread();
         startRendering.join();
         startRendering = null;

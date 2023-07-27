@@ -34,6 +34,9 @@ public class MandelbrotRenderer implements Runnable {
         int iteration, point;
         double a, b, aOld, x, y;
         int[] colorPalette = new int[maxIterations];
+//        Um vorher alle möglichen Farben zu erzeugen, die dann verwendet werden können.
+//        Um Leistung in den jeweiligen Threads zu sparen hätte man das beim StartRendering
+//        mit als Parameter übergeben können
         for (int i = 0; i < maxIterations; i++) {
             colorPalette[i] = color.getColor(i);
         }
